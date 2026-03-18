@@ -45,7 +45,7 @@ export default function App() {
   }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/warehouse-inventory">
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
 
