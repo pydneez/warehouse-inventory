@@ -4,6 +4,7 @@ import { supabase } from './lib/supabase';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import DashboardPage from './pages/DashboardPage';
+import AdminPage from './pages/AdminPage';
 
 function ProtectedRoute({ session, children }) {
   if (!session) return <Navigate to="/login" replace />;
@@ -47,6 +48,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
+
         <Route path="/login" element={
           <PublicRoute session={session}><LoginPage /></PublicRoute>
         } />
@@ -56,6 +58,10 @@ export default function App() {
         <Route path="/dashboard" element={
           <ProtectedRoute session={session}><DashboardPage /></ProtectedRoute>
         } />
+        <Route path="/admin" element={
+          <ProtectedRoute session={session}><AdminPage /></ProtectedRoute>
+        } />
+
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
