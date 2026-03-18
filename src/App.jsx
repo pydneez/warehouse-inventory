@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { supabase } from './lib/supabase';
 import LoginPage from './pages/LoginPage';
@@ -45,8 +45,7 @@ export default function App() {
   }
 
   return (
-    <BrowserRouter basename="/warehouse-inventory">
-      <Routes>
+      <Router>
         <Route path="/" element={<Navigate to="/login" replace />} />
 
         <Route path="/login" element={
@@ -63,7 +62,6 @@ export default function App() {
         } />
 
         <Route path="*" element={<Navigate to="/login" replace />} />
-      </Routes>
-    </BrowserRouter>
+      </Router>
   );
 }
