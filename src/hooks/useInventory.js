@@ -64,5 +64,16 @@ export function useInventory() {
     return { error: null };
   };
 
-  return { items, loading, error, withdraw, addItem, refetch: fetchItems };
+  const updateStock = async ({ itemId, newQuantity }) => {
+    const { error } = await supabase
+      .from('items')
+      .update({ quantity: Number(newQuantity) })
+      .eq('id', itemId);
+
+    if (error) return { error: error.message };
+    await fetchItems();
+    return { error: null };
+  };
+
+  return { items, loading, error, withdraw, addItem, updateStock, refetch: fetchItems };
 }
