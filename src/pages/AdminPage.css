@@ -1,0 +1,64 @@
+.admin-root {
+  min-height: 100vh;
+  background: var(--clr-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.admin-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.admin-page-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--clr-text);
+  line-height: 1;
+}
+
+.admin-page-sub {
+  font-size: 0.82rem;
+  color: var(--clr-text-muted);
+  margin-top: 0.3rem;
+  font-weight: 300;
+}
+
+.admin-page-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--clr-amber);
+  border: 1px solid var(--clr-amber-dim);
+  padding: 0.3rem 0.75rem;
+  background: var(--clr-amber-glow);
+  align-self: center;
+  white-space: nowrap;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 760px) {
+  .admin-grid { grid-template-columns: 1fr; }
+  .admin-main { padding: 1.5rem 1rem; }
+}
