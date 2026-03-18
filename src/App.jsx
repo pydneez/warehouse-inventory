@@ -45,7 +45,8 @@ export default function App() {
   }
 
   return (
-      <Router>
+    <Router>
+      <Routes> 
         <Route path="/" element={<Navigate to="/login" replace />} />
 
         <Route path="/login" element={
@@ -62,6 +63,7 @@ export default function App() {
         } />
 
         <Route path="*" element={<Navigate to="/login" replace />} />
-      </Router>
+      </Routes>
+    </Router>
   );
 }
