@@ -1,0 +1,131 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: rgba(13, 14, 15, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.navbar-logo-icon {
+  color: var(--clr-amber);
+  font-size: 1.3rem;
+  filter: drop-shadow(0 0 5px var(--clr-amber));
+}
+
+.navbar-logo-text {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--clr-text);
+}
+
+/* Nav links */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+}
+
+.navbar-link {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--clr-text-muted);
+  padding: 0.5rem 1rem;
+  transition: color 0.2s;
+}
+
+.navbar-link:hover { color: var(--clr-text); }
+
+.navbar-link--active {
+  color: var(--clr-amber);
+}
+
+.navbar-link-indicator {
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: var(--clr-amber);
+  box-shadow: 0 0 6px var(--clr-amber);
+}
+
+/* User section */
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.navbar-user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.1rem;
+}
+
+.navbar-user-label {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  color: var(--clr-text-muted);
+}
+
+.navbar-user-name {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--clr-text);
+  letter-spacing: 0.05em;
+}
+
+.navbar-admin-badge {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  color: var(--clr-amber);
+  border: 1px solid var(--clr-amber-dim);
+  padding: 0.1rem 0.4rem;
+  background: var(--clr-amber-glow);
+  align-self: flex-end;
+}
+
+.navbar-signout {
+  background: none;
+  border: 1px solid var(--clr-border);
+  color: var(--clr-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.navbar-signout:hover:not(:disabled) {
+  border-color: var(--clr-error);
+  color: var(--clr-error);
+}
+
+.navbar-signout:disabled { opacity: 0.5; cursor: not-allowed; }

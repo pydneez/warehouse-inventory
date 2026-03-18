@@ -1,0 +1,29 @@
+/* Global reset – component-level styles live in their own CSS files */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: #0d0e0f;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove default button/input browser styling */
+button, input {
+  font-family: inherit;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #1c1f22 inset;
+  -webkit-text-fill-color: #e8e9ea;
+  transition: background-color 5000s ease-in-out 0s;
+}
